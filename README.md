@@ -1,4 +1,4 @@
-Translatable Routing
+CMS Preview Preference
 =================
 Adds the ability for users to control the default CMS preview mode and size for their login.
 
