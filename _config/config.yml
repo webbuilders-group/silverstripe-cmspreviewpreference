@@ -1,0 +1,14 @@
+---
+Name: cmspreviewpreference
+After: "framework/*", "cms/*"
+---
+UserPreviewPreference:
+    DefaultMode: "content"
+
+LeftAndMain:
+    extensions:
+        - "CMSPreviewPreference"
+
+Member:
+    extensions:
+        - "UserPreviewPreference"
