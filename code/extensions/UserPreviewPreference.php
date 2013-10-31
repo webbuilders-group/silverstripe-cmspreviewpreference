@@ -7,6 +7,8 @@ class UserPreviewPreference extends DataExtension {
     private static $defaults=array(
                                 'DefaultPreviewMode'=>'content'
                             );
+    private $isSaving=false;
+    
     
     /**
      * Updates the fields used in the cms
@@ -22,7 +24,10 @@ class UserPreviewPreference extends DataExtension {
         
         if(Session::get('ShowPreviewSettingChangeReload')==true) {
             $field->setError(_t('UserPreviewPreference.CHANGE_REFRESH', '_You have updated your preview preference, you must refresh your browser to see the updated setting'), 'warning');
-            Session::clear('ShowPreviewSettingChangeReload');
+            
+            if($this->isSaving==false) {
+                Session::clear('ShowPreviewSettingChangeReload');
+            }
         }
     }
     
@@ -40,6 +45,7 @@ class UserPreviewPreference extends DataExtension {
         //If changed ensure their is a session message
         if($this->owner->isChanged('DefaultPreviewMode')) {
             Session::set('ShowPreviewSettingChangeReload', true);
+            $this->isSaving=true;
         }
     }
 }
