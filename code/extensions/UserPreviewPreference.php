@@ -24,6 +24,7 @@ class UserPreviewPreference extends DataExtension {
         
         if(Session::get('ShowPreviewSettingChangeReload')==true) {
             $field->setError(_t('UserPreviewPreference.CHANGE_REFRESH', '_You have updated your preview preference, you must refresh your browser to see the updated setting'), 'warning');
+            Requirements::javascript(CMSPREVIEWPREFERENCE_BASE.'/javascript/clear-local-preference.js');
             
             if($this->isSaving==false) {
                 Session::clear('ShowPreviewSettingChangeReload');
