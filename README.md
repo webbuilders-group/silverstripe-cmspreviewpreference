@@ -10,8 +10,8 @@ Adds the ability for users to control the default CMS preview mode and size for 
 
 
 ## Installation
-* Download the module from here https://github.com/webbuilders-group/silverstripe-translatablerouting/archive/master.zip
-* Extract the downloaded archive into your site root so that the destination folder is called translatablerouting, opening the extracted folder should contain _config.php in the root along with other files/folders
+* Download the module from here https://github.com/webbuilders-group/silverstripe-cmspreviewpreference/archive/master.zip
+* Extract the downloaded archive into your site root so that the destination folder is called cmspreviewpreference, opening the extracted folder should contain _config.php in the root along with other files/folders
 * Run dev/build?flush=all to regenerate the manifest
 
 
