@@ -6,7 +6,7 @@ Adds the ability for users to control the default CMS preview mode and size for 
 * Ed Chipman ([UndefinedOffset](https://github.com/UndefinedOffset))
 
 ## Requirements
-* SilverStripe CMS 3.1.x
+* SilverStripe CMS 3.1+
 
 
 ## Installation
