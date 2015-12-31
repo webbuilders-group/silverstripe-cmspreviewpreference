@@ -1,10 +1,12 @@
 <?php
-class CMSPreviewPreference extends Extension {
-    public function init() {
+class CMSPreviewPreference extends Extension
+{
+    public function init()
+    {
         $mode=Config::inst()->get('UserPreviewPreference', 'DefaultMode');
         $userMode=Member::currentUser()->DefaultPreviewMode;
         
-        if(!empty($userMode)) {
+        if (!empty($userMode)) {
             $mode=$userMode;
         }
         
@@ -14,4 +16,3 @@ class CMSPreviewPreference extends Extension {
                                                                                                             ), 'cms-preview-mode');
     }
 }
-?>
