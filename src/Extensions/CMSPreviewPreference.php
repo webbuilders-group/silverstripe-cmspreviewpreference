@@ -16,9 +16,9 @@ class CMSPreviewPreference extends Extension {
         }
         
         
-        Requirements::javascriptTemplate(CMSPREVIEWPREFERENCE_BASE.'/javascript/preview-mode.template.js', array(
-                                                                                                                'PreviewMode'=>$mode
-                                                                                                            ), 'cms-preview-mode');
+        Requirements::javascriptTemplate('webbuilders-group/silverstripe-cmspreviewpreference: javascript/preview-mode.template.js', array(
+                                                                                                                                            'PreviewMode'=>$mode
+                                                                                                                                        ), 'cms-preview-mode');
     }
 }
 ?>
