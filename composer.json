@@ -1,7 +1,7 @@
 {
     "name": "webbuilders-group/silverstripe-cmspreviewpreference",
     "description": "Adds the ability for users to control the default CMS preview mode and size for their login",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "member", "preview", "preferences"],
     "license": "BSD-3-Clause",
     "authors": [
