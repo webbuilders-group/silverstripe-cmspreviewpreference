@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.0.0](https://github.com/webbuilders-group/silverstripe-cmspreviewpreference/tree/1.0.0) (2017-01-04)
+## [1.0.0](https://github.com/webbuilders-group/silverstripe-cmspreviewpreference/tree/1.0.0) (2018-03-14)
 [Full Changelog](https://github.com/webbuilders-group/silverstripe-cmspreviewpreference/compare/0.1.4...1.0.0)
 
 ## [0.1.4](https://github.com/webbuilders-group/silverstripe-cmspreviewpreference/tree/0.1.4) (2017-01-04)
