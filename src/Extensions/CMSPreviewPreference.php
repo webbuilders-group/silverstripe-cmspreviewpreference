@@ -1,4 +1,11 @@
 <?php
+namespace WebbuildersGroup\CMSPreviewPreference\Extensions;
+
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Security\Member;
+use SilverStripe\View\Requirements;
+use SilverStripe\Core\Extension;
+
 class CMSPreviewPreference extends Extension {
     public function init() {
         $mode=Config::inst()->get('UserPreviewPreference', 'DefaultMode');

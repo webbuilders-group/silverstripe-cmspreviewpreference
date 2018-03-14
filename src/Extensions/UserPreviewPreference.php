@@ -1,4 +1,14 @@
 <?php
+namespace WebbuildersGroup\CMSPreviewPreference\Extensions;
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Control\Controller;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Forms\OptionsetField;
+use SilverStripe\Control\Session;
+use SilverStripe\View\Requirements;
+use SilverStripe\ORM\DataExtension;
+
 class UserPreviewPreference extends DataExtension {
     private static $db=array(
                             'DefaultPreviewMode'=>"Enum(array('content', 'split', 'preview'), 'content')"
@@ -7,6 +17,7 @@ class UserPreviewPreference extends DataExtension {
     private static $defaults=array(
                                 'DefaultPreviewMode'=>'content'
                             );
+    
     private $isSaving=false;
     
     
@@ -22,12 +33,12 @@ class UserPreviewPreference extends DataExtension {
                                                                                                                                                             'preview'=>_t('UserPreviewPreference.PREVIEW_MODE', '_Preview Mode: Only menu and preview areas are shown')
                                                                                                                                                         ), Config::inst()->get('UserPreviewPreference', 'DefaultMode')));
         
-        if(Session::get('ShowPreviewSettingChangeReload')==true) {
-            $field->setError(_t('UserPreviewPreference.CHANGE_REFRESH', '_You have updated your preview preference, you must refresh your browser to see the updated setting'), 'warning');
-            Requirements::javascript(CMSPREVIEWPREFERENCE_BASE.'/javascript/clear-local-preference.js');
+        if(Controller::curr()->getRequest()->getSession()->get('ShowPreviewSettingChangeReload')==true) {
+            $field->setMessage(_t('UserPreviewPreference.CHANGE_REFRESH', '_You have updated your preview preference, you must refresh your browser to see the updated setting'), 'warning');
+            Requirements::javascript('webbuilders-group/silverstripe-cmspreviewpreference: javascript/clear-local-preference.js');
             
             if($this->isSaving==false) {
-                Session::clear('ShowPreviewSettingChangeReload');
+                Controller::curr()->getRequest()->getSession()->clear('ShowPreviewSettingChangeReload');
             }
         }
     }
@@ -45,7 +56,7 @@ class UserPreviewPreference extends DataExtension {
         
         //If changed ensure their is a session message
         if($this->owner->isChanged('DefaultPreviewMode')) {
-            Session::set('ShowPreviewSettingChangeReload', true);
+            Controller::curr()->getRequest()->getSession()->set('ShowPreviewSettingChangeReload', true);
             $this->isSaving=true;
         }
     }

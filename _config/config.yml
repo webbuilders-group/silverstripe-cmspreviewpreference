@@ -1,14 +1,17 @@
 ---
 Name: cmspreviewpreference
-After: "framework/*", "cms/*"
+After: 
+    - "framework/*"
 ---
-UserPreviewPreference:
+WebbuildersGroup\CMSPreviewPreference\Extensions\UserPreviewPreference:
     DefaultMode: "content"
 
-LeftAndMain:
-    extensions:
-        - "CMSPreviewPreference"
 
-Member:
+SilverStripe\Admin\LeftAndMain:
     extensions:
-        - "UserPreviewPreference"
+        - WebbuildersGroup\CMSPreviewPreference\Extensions\CMSPreviewPreference
+
+
+SilverStripe\Security\Member:
+    extensions:
+        - WebbuildersGroup\CMSPreviewPreference\Extensions\UserPreviewPreference
