@@ -11,7 +11,7 @@ Adds the ability for users to control the default CMS preview mode and size for 
 
 ## Installation
 ```
-composer require webbuilders-group/silverstripe-new-relic
+composer require webbuilders-group/silverstripe-cmspreviewpreference
 ```
 
 
@@ -22,6 +22,6 @@ When managing a user or a user views their profile in the CMS they will see the 
 The default preview mode is set to "content", you can change this in your config by setting the UserPreviewPreference.DefaultMode setting to one of the following: "content", "split" or "preview".
 
 ```yml
-UserPreviewPreference:
+WebbuildersGroup\CMSPreviewPreference\Extensions\UserPreviewPreference:
     DefaultMode: "split"
 ```
