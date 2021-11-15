@@ -1,7 +1,7 @@
 en:
-    UserPreviewPreference:
-        DEFAULT_MODE: "Default Preview Mode"
-        CONTENT_MODE: "Content Mode: Only menu and content areas are shown"
-        SPLIT_MODE: "Split Mode: Side by Side editing and previewing"
-        PREVIEW_MODE: "Preview Mode: Only menu and preview areas are shown"
-        CHANGE_REFRESH: "You have updated your preview preference, you must refresh your browser to see the updated setting"
+  WebbuildersGroup\CMSPreviewPreference\Extensions\UserPreviewPreference:
+    DEFAULT_MODE: "Default Preview Mode"
+    CONTENT_MODE: "Content Mode: Only menu and content areas are shown"
+    SPLIT_MODE: "Split Mode: Side by Side editing and previewing"
+    PREVIEW_MODE: "Preview Mode: Only menu and preview areas are shown"
+    CHANGE_REFRESH: "You have updated your preview preference, you must refresh your browser to see the updated setting"
