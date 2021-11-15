@@ -12,8 +12,7 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "~4.0",
-        "composer/installers": "*"
+        "silverstripe/framework": "~4.0"
     },
 	"extra": {
         "expose": [
@@ -25,5 +24,10 @@
 	},
     "support": {
         "issues": "https://github.com/webbuilders-group/silverstripe-cmspreviewpreference/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "WebbuildersGroup\\CMSPreviewPreference\\": "src/"
+        }
     }
 }
