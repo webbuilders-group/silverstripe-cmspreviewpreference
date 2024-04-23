@@ -1,16 +1,13 @@
 ---
 Name: cmspreviewpreference
-After: 
-  - "silverstripe/framework/*"
+After: "#coresecurity"
 ---
 WebbuildersGroup\CMSPreviewPreference\Extensions\UserPreviewPreference:
   DefaultMode: "content"
 
-
 SilverStripe\Admin\LeftAndMain:
   extensions:
     - 'WebbuildersGroup\CMSPreviewPreference\Extensions\CMSPreviewPreference'
-
 
 SilverStripe\Security\Member:
   extensions:
