@@ -11,6 +11,7 @@ class CMSPreviewPreference extends Extension
     public function onAfterInit()
     {
         $mode = Config::inst()->get(UserPreviewPreference::class, 'DefaultMode');
+        $userMode = null;
         if (Security::getCurrentUser()) {
             $userMode = Security::getCurrentUser()->DefaultPreviewMode;
         }
