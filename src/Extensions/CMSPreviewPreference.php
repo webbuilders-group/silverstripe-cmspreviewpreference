@@ -8,10 +8,12 @@ use SilverStripe\View\Requirements;
 
 class CMSPreviewPreference extends Extension
 {
-    public function init()
+    public function onAfterInit()
     {
         $mode = Config::inst()->get(UserPreviewPreference::class, 'DefaultMode');
-        $userMode = Security::getCurrentUser()->DefaultPreviewMode;
+        if (Security::getCurrentUser()) {
+            $userMode = Security::getCurrentUser()->DefaultPreviewMode;
+        }
         if (!empty($userMode)) {
             $mode = $userMode;
         }

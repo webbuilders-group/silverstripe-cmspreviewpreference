@@ -1,15 +1,14 @@
 <?php
 namespace WebbuildersGroup\CMSPreviewPreference\Extensions;
 
-use SilverStripe\Forms\FieldList;
 use SilverStripe\Control\Controller;
 use SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Extension;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\OptionsetField;
-use SilverStripe\Control\Session;
 use SilverStripe\View\Requirements;
-use SilverStripe\ORM\DataExtension;
 
-class UserPreviewPreference extends DataExtension
+class UserPreviewPreference extends Extension
 {
     private static $db = [
         'DefaultPreviewMode' => "Enum(array('content', 'split', 'preview'), 'content')",
@@ -57,8 +56,6 @@ class UserPreviewPreference extends DataExtension
      */
     public function onBeforeWrite()
     {
-        parent::onBeforeWrite();
-
         if (empty($this->owner->DefaultPreviewMode)) {
             $this->owner->DefaultPreviewMode = Config::inst()->get(UserPreviewPreference::class, 'DefaultMode');
         }
